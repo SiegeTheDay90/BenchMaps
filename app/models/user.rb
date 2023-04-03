@@ -3,7 +3,7 @@ class User < ApplicationRecord
     validates :email, :password_digest, :session_token, uniqueness: true
     validates :password, length: {in: 8..16, message: "must be between 8 and 16 characters"}, allow_nil: true
     validates :username, format: { without: URI::MailTo::EMAIL_REGEXP, message:  "can't be an email" }, length: {in: 6..16, message: "must be between 6 and 16 characters"}
-    validates :email, email: {mode: :strict, require_fqdn: true, message: "must be a valid email"}
+    # validates :email, email: {mode: :strict, require_fqdn: true, message: "must be a valid email"}
   
     before_validation :ensure_session_token
     attr_reader :password

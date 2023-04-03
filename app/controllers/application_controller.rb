@@ -7,15 +7,15 @@ class ApplicationController < ActionController::API
     before_action :snake_case_params, :attach_authenticity_token
 
     def current_user
-        @current_user ||= User.find_by(session_token: session['_trnkt_session'])
+        @current_user ||= User.find_by(session_token: session['_bench_bnb_session'])
     end
       
     def login!(user)
-        session['_trnkt_session'] = user.reset_session_token!
+        session['_bench_bnb_session'] = user.reset_session_token!
     end
     
     def logout!
-        session['_trnkt_session'] = nil
+        session['_bench_bnb_session'] = nil
         current_user.reset_session_token!
         @current_user = nil
     end
