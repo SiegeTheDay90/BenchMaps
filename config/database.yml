@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: bench_bnb_production
-  username: bench_bnb
-  password: <%= ENV["BENCH_BNB_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
