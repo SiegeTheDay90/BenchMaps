@@ -6,7 +6,8 @@ class Api::UsersController < ApplicationController
 
     if @user.save
       login!(@user)
-      render json: {user: {email: @user.email, username: @user.username}}
+      render :show
+      # render json: {user: {email: @user.email, username: @user.username}}
     else
       render json: {errors: @user.errors.full_messages}, status: 422
     end
@@ -21,7 +22,7 @@ class Api::UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     if @user
-      render json: {id: @user.id, username: @user.username, email: @user.email}
+      render :show
     else
       render json: {errors: ["User does not exist."], status: 422}
     end

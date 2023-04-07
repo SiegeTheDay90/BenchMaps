@@ -13,6 +13,7 @@ class Api::SessionsController < ApplicationController
       @user = User.find_by_credentials(session_params[:credential], session_params[:password])
       if @user
         login!(@user)
+        debugger
         render :show
       else
         @user = nil

@@ -6,6 +6,8 @@
 .pnp.js
 
 # testing
+/frontend/src/components/BenchMap/example.jsx
+frontend/src/components/BenchMap/example.jsx
 /coverage
 
 # production

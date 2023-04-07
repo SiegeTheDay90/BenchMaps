@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector} from "react-redux";
 import * as benchActions from '../../store/benches'
 import BenchListItem from "./benchlistitem";
+// import BenchMap from "../BenchMap/BenchMap.jsx";
+import BenchMap from "../BenchMap/BenchMap.jsx";
 
 
 
@@ -18,9 +20,9 @@ function BenchIndexPage(){
         <ol>
             {Object.values(benches).map((bench) => (
                 <BenchListItem key={bench.id} bench={bench} />
-            ))
-        }
+            ))}
         </ol>
+        <BenchMap benches={Object.values(benches)}/>
     </div>
     )
 }

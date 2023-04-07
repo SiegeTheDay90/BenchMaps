@@ -1,5 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+// import React from 'react';
+import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { ModalProvider } from './context/Modal';
@@ -17,11 +17,7 @@ if (process.env.NODE_ENV !== "production") {
   window.sessionActions = sessionActions;
 }
 
-// const Carrot = () => (
-//   <div style={{ color: "orange", fontSize: "100px" }}>
-//     <i className="fa-solid fa-carrot"></i>
-//   </div>
-// );
+const root = createRoot(document.getElementById("root"))
 
 function Root() {
   return (
@@ -29,20 +25,17 @@ function Root() {
       <Provider store={store}>
         <BrowserRouter>
           <App />
-          {/* <Carrot /> */}
         </BrowserRouter>
       </Provider>
     </ModalProvider>
   );
 }
 
-const renderApplication = () => {
-  ReactDOM.render(
-    <React.StrictMode>
-      <Root />
-    </React.StrictMode>,
-    document.getElementById('root')
-  );
+
+function renderApplication(){
+  root.render(
+    <Root />
+  )
 }
 
 if (

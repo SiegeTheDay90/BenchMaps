@@ -42,7 +42,7 @@ ApplicationRecord.transaction do
       price: 25.75,
       seating: 2,
       lat: 40.79532,
-      lng: -73.95428
+      lng: (360 + -73.95428)%360
     )
   
     Bench.create!(
@@ -51,7 +51,7 @@ ApplicationRecord.transaction do
       price: 39.95,
       seating: 3,
       lat: 40.78006,
-      lng: -73.96963
+      lng: (360 + -73.96963)%360
     )
   
     Bench.create!(
@@ -60,7 +60,7 @@ ApplicationRecord.transaction do
       price: 14.99,
       seating: 4,
       lat: 40.74150,
-      lng: -73.92284
+      lng: (360 + -73.92284)%360
     )
   
     puts "Done!"
